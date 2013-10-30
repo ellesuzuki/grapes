@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '1.9.3'
 
 gem 'rails', '3.2.13'
 
@@ -19,6 +20,16 @@ end
 
 gem 'jquery-rails'
 
+group :development, :test do
+  gem 'sqlite3', '1.3.8'
+  gem 'rspec-rails', '~> 2.14.0'
+  gem 'capybara', '2.1.0'
+end
+
+group :production do
+  gem 'pg'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
@@ -33,12 +44,3 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
-
-group :development, :test do
-  gem 'sqlite3'
-  gem 'rspec-rails', '~> 2.0'
-end
-
-group :production do
-  gem 'pg'
-end
